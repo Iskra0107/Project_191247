@@ -1,0 +1,41 @@
+<div class="container">
+<nav class="navbar navbar-expand navbar-light bg-light shadow fixed-top">
+<div class="container">
+
+  <a class="navbar-brand" href="{% url 'home' %}"><img src="https://media.istockphoto.com/vectors/heart-and-leaf-sign-love-nature-symbol-organic-icon-biodegradable-vector-id1215382410?k=20&m=1215382410&s=612x612&w=0&h=0BjeCpyohdFl6x8VVjSEeldMbh03qdo5BV_rSsNFxAs=" style="width: 50px;">Дијабетес</img></a>
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+   <div class="navbar-nav ms-auto">
+
+        <ul class="navbar-nav ms-auto"> 
+          
+            <li class="nav-item"> <a class="nav-item nav-link" href="{% url 'dijabetis' %}">Дијабетес</a></li>
+            <li class="nav-item"> <a class="nav-item nav-link" href="{% url 'education' %}">Едукација</a></li>
+
+            
+
+            <li class="nav-item"><a class="nav-item nav-link" href="{% url 'ishrana' %}">Исхрана</a></li>
+          
+            <li class="nav-item"><a class="nav-item nav-link" href="{% url 'vezbi' %}">Вежби</a></li>
+        
+      
+      {% if user.is_authenticated %}
+           
+           <li class="nav-item"><a class="nav-item nav-link" href="{% url 'izmeri' %}">Измери</a></li>  
+           <li class="nav-item"><a class="nav-item nav-link" href="{% url 'potsetnik' %}">Потсетник</a></li>    
+           <li class="nav-item"><a class="nav-item nav-link" href="#">Квиз</a></li>
+           <li class="nav-item"><a class="nav-item nav-link" href="{% url 'logout' %}" class="btn btn-primary">Logout</a></li>
+      {% else %}
+           <li class="nav-item"><a class="nav-item nav-link" href="{% url 'register_user' %}">Register</a></li>
+           <li class="nav-item"><a class="nav-item nav-link" href="{% url 'login' %}">Login</a></li>
+      {% endif %}
+ </ul>
+    </div>
+  </div>
+</nav>
+
+</div>
